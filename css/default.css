@@ -1,0 +1,130 @@
+:root {
+  --color-header-background: #00264E;
+  --color-header-text: FloralWhite;
+  --color-background: #EFF9FF;
+  --color-image-border: #00264E;
+  --header-height: 60px;
+  --section_spacing: 16px;
+  --thumb_spacing: 8px;
+  --thumb_internal_spacing: 4px;
+  --font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: var(--color-background);
+    margin: 0;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-header-background);
+    width: 100%;
+    height: var(--header-height);
+}
+
+.header a, .header a:visited, .header span {
+    color: var(--color-header-text);
+}
+
+.header-path {
+    margin-left: var(--section_spacing);
+    font-family: var(--font-family);
+    font-size: larger;
+    color: var(--color-header-text);
+}
+
+.header-nav {
+    display: flex;
+    margin-right: var(--section_spacing);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--section_spacing);
+    align-items: center;
+    padding: var(--section_spacing);
+    overflow: auto;
+}
+
+.thumbs-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--thumb_spacing);
+    align-items: end;
+    justify-content: center;
+}
+
+.thumb {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--thumb_internal_spacing);
+    font-family: var(--font-family);
+}
+
+.video-thumb-container {
+    display: inline-block;
+    position: relative;
+}
+
+.video-thumb-image {
+    display: block;
+    border: 1px solid var(--color-image-border);
+    width: 100%;
+    height: 100%;
+}
+
+.video-thumb-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+
+.item-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: var(--thumb_internal_spacing);
+    font-family: var(--font-family);
+}
+
+.item {
+    border: 1px solid var(--color-image-border);
+    width: 100%;
+}
+
+.item-title {
+    font-weight: bold;
+}
+
+.item-description {
+    font-size: 0.9em;
+}
+
+.item-copyright {
+    font-size: 0.8em;
+}
+
+.item-video {
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.item-video iframe {
+  width: 100%;
+  height: 100%;
+}
